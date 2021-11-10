@@ -7,7 +7,7 @@ const ideagenerator = require("./ideagenerator.js");
 
 // Application
 let app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // View Engine declarations
 let engine = svelteViewEngine(config.svelteViewEngine);

@@ -1,8 +1,8 @@
 module.exports = {
-    port: 3000,
+    port: 3001,
 
     svelteViewEngine: {
-        env: "dev",
+        env: "prod",
         template: `${__dirname}/src/template.svelte`,
         dir: `${__dirname}/src/routes`,
         type: "svelte",
