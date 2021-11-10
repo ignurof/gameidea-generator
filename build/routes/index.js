@@ -160,6 +160,9 @@ var Index = (function () {
     function text(data) {
         return document.createTextNode(data);
     }
+    function space() {
+        return text(' ');
+    }
     function children(element) {
         return Array.from(element.childNodes);
     }
@@ -231,6 +234,9 @@ var Index = (function () {
             }
         }, () => text(data), true // Text nodes should not update last index since it is likely not worth it to eliminate an increasing subsequence of actual elements
         );
+    }
+    function claim_space(nodes) {
+        return claim_text(nodes, ' ');
     }
     function custom_event(type, detail, bubbles = false) {
         const e = document.createEvent('CustomEvent');
@@ -452,13 +458,6 @@ var Index = (function () {
         dispatch_dev('SvelteDOMRemove', { node });
         detach(node);
     }
-    function set_data_dev(text, data) {
-        data = '' + data;
-        if (text.wholeText === data)
-            return;
-        dispatch_dev('SvelteDOMSetData', { node: text, data });
-        text.data = data;
-    }
     function validate_slots(name, slot, keys) {
         for (const slot_key of Object.keys(slot)) {
             if (!~keys.indexOf(slot_key)) {
@@ -491,28 +490,46 @@ var Index = (function () {
     function create_fragment(ctx) {
     	let t0;
     	let t1;
+    	let t2;
+    	let t3;
+    	let t4;
+    	let t5;
 
     	const block = {
     		c: function create() {
     			t0 = text("Hello World!\r\n\r\n");
-    			t1 = text(/*gameIdea*/ ctx[0]);
+    			t1 = text(/*style*/ ctx[0]);
+    			t2 = space();
+    			t3 = text(/*theme*/ ctx[1]);
+    			t4 = space();
+    			t5 = text(/*genre*/ ctx[2]);
     		},
     		l: function claim(nodes) {
     			t0 = claim_text(nodes, "Hello World!\r\n\r\n");
-    			t1 = claim_text(nodes, /*gameIdea*/ ctx[0]);
+    			t1 = claim_text(nodes, /*style*/ ctx[0]);
+    			t2 = claim_space(nodes);
+    			t3 = claim_text(nodes, /*theme*/ ctx[1]);
+    			t4 = claim_space(nodes);
+    			t5 = claim_text(nodes, /*genre*/ ctx[2]);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, t0, anchor);
     			insert_hydration_dev(target, t1, anchor);
+    			insert_hydration_dev(target, t2, anchor);
+    			insert_hydration_dev(target, t3, anchor);
+    			insert_hydration_dev(target, t4, anchor);
+    			insert_hydration_dev(target, t5, anchor);
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*gameIdea*/ 1) set_data_dev(t1, /*gameIdea*/ ctx[0]);
-    		},
+    		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(t5);
     		}
     	};
 
@@ -530,34 +547,40 @@ var Index = (function () {
     function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Routes', slots, []);
-    	let { gameIdea } = $$props;
-    	const writable_props = ['gameIdea'];
+    	let { gameIdeaObj } = $$props;
+    	let style = gameIdeaObj.style;
+    	let theme = gameIdeaObj.theme;
+    	let genre = gameIdeaObj.genre;
+    	const writable_props = ['gameIdeaObj'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Routes> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$$set = $$props => {
-    		if ('gameIdea' in $$props) $$invalidate(0, gameIdea = $$props.gameIdea);
+    		if ('gameIdeaObj' in $$props) $$invalidate(3, gameIdeaObj = $$props.gameIdeaObj);
     	};
 
-    	$$self.$capture_state = () => ({ gameIdea });
+    	$$self.$capture_state = () => ({ gameIdeaObj, style, theme, genre });
 
     	$$self.$inject_state = $$props => {
-    		if ('gameIdea' in $$props) $$invalidate(0, gameIdea = $$props.gameIdea);
+    		if ('gameIdeaObj' in $$props) $$invalidate(3, gameIdeaObj = $$props.gameIdeaObj);
+    		if ('style' in $$props) $$invalidate(0, style = $$props.style);
+    		if ('theme' in $$props) $$invalidate(1, theme = $$props.theme);
+    		if ('genre' in $$props) $$invalidate(2, genre = $$props.genre);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [gameIdea];
+    	return [style, theme, genre, gameIdeaObj];
     }
 
     class Routes extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { gameIdea: 0 });
+    		init(this, options, instance, create_fragment, safe_not_equal, { gameIdeaObj: 3 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -569,16 +592,16 @@ var Index = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*gameIdea*/ ctx[0] === undefined && !('gameIdea' in props)) {
-    			console.warn("<Routes> was created without expected prop 'gameIdea'");
+    		if (/*gameIdeaObj*/ ctx[3] === undefined && !('gameIdeaObj' in props)) {
+    			console.warn("<Routes> was created without expected prop 'gameIdeaObj'");
     		}
     	}
 
-    	get gameIdea() {
+    	get gameIdeaObj() {
     		throw new Error("<Routes>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	set gameIdea(value) {
+    	set gameIdeaObj(value) {
     		throw new Error("<Routes>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }

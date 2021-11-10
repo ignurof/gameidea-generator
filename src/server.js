@@ -21,10 +21,12 @@ app.set("views", dir);
 app.use("/assets", express.static(buildDir));
 
 // Render the response with props before responding
-app.get("/", (req, res, next) => {
+app.get("/", async(req, res, next) => {
+    let myIdeas = await ideagenerator.GenerateIdea();
+    console.log(myIdeas);
     res.render("index", {
         // Props here
-        gameIdea: ideagenerator.GenerateIdea(),
+        gameIdeaObj: myIdeas,
     });
 });
 

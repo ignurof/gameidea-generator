@@ -1,5 +1,9 @@
 <script>
-    export let gameIdea;
+    export let gameIdeaObj;
+
+    let style = gameIdeaObj.style;
+    let theme = gameIdeaObj.theme;
+    let genre = gameIdeaObj.genre;
 </script>
 
 <style>
@@ -8,4 +12,4 @@
 
 Hello World!
 
-{gameIdea}
+{style} {theme} {genre}
