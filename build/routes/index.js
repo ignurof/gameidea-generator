@@ -522,6 +522,13 @@ var Index = (function () {
         else
             dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
     }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
     function validate_slots(name, slot, keys) {
         for (const slot_key of Object.keys(slot)) {
             if (!~keys.indexOf(slot_key)) {
@@ -686,33 +693,33 @@ var Index = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(h1, "class", "svelte-1ikbsl9");
-    			add_location(h1, file, 83, 4, 1460);
+    			add_location(h1, file, 95, 4, 1797);
     			attr_dev(legend0, "class", "svelte-1ikbsl9");
-    			add_location(legend0, file, 86, 8, 1524);
+    			add_location(legend0, file, 98, 8, 1861);
     			attr_dev(h40, "class", "svelte-1ikbsl9");
-    			add_location(h40, file, 87, 8, 1556);
+    			add_location(h40, file, 99, 8, 1893);
     			attr_dev(legend1, "class", "svelte-1ikbsl9");
-    			add_location(legend1, file, 88, 8, 1582);
+    			add_location(legend1, file, 100, 8, 1919);
     			attr_dev(h41, "class", "svelte-1ikbsl9");
-    			add_location(h41, file, 89, 8, 1614);
+    			add_location(h41, file, 101, 8, 1951);
     			attr_dev(legend2, "class", "svelte-1ikbsl9");
-    			add_location(legend2, file, 90, 8, 1640);
+    			add_location(legend2, file, 102, 8, 1977);
     			attr_dev(h42, "class", "svelte-1ikbsl9");
-    			add_location(h42, file, 91, 8, 1672);
+    			add_location(h42, file, 103, 8, 2009);
     			attr_dev(div0, "class", "card svelte-1ikbsl9");
-    			add_location(div0, file, 85, 4, 1496);
+    			add_location(div0, file, 97, 4, 1833);
     			attr_dev(button, "class", "svelte-1ikbsl9");
-    			add_location(button, file, 94, 4, 1708);
+    			add_location(button, file, 106, 4, 2045);
     			attr_dev(a, "href", "ignurof.xyz");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "class", "svelte-1ikbsl9");
-    			add_location(a, file, 98, 29, 1855);
+    			add_location(a, file, 110, 29, 2180);
     			attr_dev(div1, "class", "credits svelte-1ikbsl9");
-    			add_location(div1, file, 97, 8, 1803);
+    			add_location(div1, file, 109, 8, 2128);
     			attr_dev(footer, "class", "svelte-1ikbsl9");
-    			add_location(footer, file, 96, 4, 1785);
+    			add_location(footer, file, 108, 4, 2110);
     			attr_dev(main, "class", "svelte-1ikbsl9");
-    			add_location(main, file, 82, 0, 1448);
+    			add_location(main, file, 94, 0, 1785);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, main, anchor);
@@ -748,11 +755,15 @@ var Index = (function () {
     			append_hydration_dev(a, t17);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[4], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[5], false, false, false);
     				mounted = true;
     			}
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*style*/ 1) set_data_dev(t4, /*style*/ ctx[0]);
+    			if (dirty & /*theme*/ 2) set_data_dev(t8, /*theme*/ ctx[1]);
+    			if (dirty & /*genre*/ 4) set_data_dev(t12, /*genre*/ ctx[2]);
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
@@ -780,22 +791,38 @@ var Index = (function () {
     	let style = gameIdeaObj.style;
     	let theme = gameIdeaObj.theme;
     	let genre = gameIdeaObj.genre;
+
+    	const FetchNewIdea = async () => {
+    		let response = await fetch("/generate");
+    		if (!response.ok) return console.error("Something went wrong with generate request!");
+    		let result = await response.json();
+    		$$invalidate(0, style = result.style);
+    		$$invalidate(1, theme = result.theme);
+    		$$invalidate(2, genre = result.genre);
+    	};
+
     	const writable_props = ['gameIdeaObj'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1.warn(`<Routes> was created with unknown prop '${key}'`);
     	});
 
-    	const click_handler = () => console.log("hello world");
+    	const click_handler = () => FetchNewIdea();
 
     	$$self.$$set = $$props => {
-    		if ('gameIdeaObj' in $$props) $$invalidate(3, gameIdeaObj = $$props.gameIdeaObj);
+    		if ('gameIdeaObj' in $$props) $$invalidate(4, gameIdeaObj = $$props.gameIdeaObj);
     	};
 
-    	$$self.$capture_state = () => ({ gameIdeaObj, style, theme, genre });
+    	$$self.$capture_state = () => ({
+    		gameIdeaObj,
+    		style,
+    		theme,
+    		genre,
+    		FetchNewIdea
+    	});
 
     	$$self.$inject_state = $$props => {
-    		if ('gameIdeaObj' in $$props) $$invalidate(3, gameIdeaObj = $$props.gameIdeaObj);
+    		if ('gameIdeaObj' in $$props) $$invalidate(4, gameIdeaObj = $$props.gameIdeaObj);
     		if ('style' in $$props) $$invalidate(0, style = $$props.style);
     		if ('theme' in $$props) $$invalidate(1, theme = $$props.theme);
     		if ('genre' in $$props) $$invalidate(2, genre = $$props.genre);
@@ -805,13 +832,13 @@ var Index = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [style, theme, genre, gameIdeaObj, click_handler];
+    	return [style, theme, genre, FetchNewIdea, gameIdeaObj, click_handler];
     }
 
     class Routes extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { gameIdeaObj: 3 });
+    		init(this, options, instance, create_fragment, safe_not_equal, { gameIdeaObj: 4 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -823,7 +850,7 @@ var Index = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*gameIdeaObj*/ ctx[3] === undefined && !('gameIdeaObj' in props)) {
+    		if (/*gameIdeaObj*/ ctx[4] === undefined && !('gameIdeaObj' in props)) {
     			console_1.warn("<Routes> was created without expected prop 'gameIdeaObj'");
     		}
     	}

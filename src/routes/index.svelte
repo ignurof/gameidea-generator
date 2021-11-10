@@ -4,6 +4,18 @@
     let style = gameIdeaObj.style;
     let theme = gameIdeaObj.theme;
     let genre = gameIdeaObj.genre;
+
+    const FetchNewIdea = async() => {
+        let response = await fetch("/generate");
+
+        if(!response.ok) return console.error("Something went wrong with generate request!");
+
+        let result = await response.json();
+
+        style = result.style;
+        theme = result.theme;
+        genre = result.genre;
+    }
 </script>
 
 <style>
@@ -98,7 +110,7 @@
         <h4>{genre}</h4>
     </div>
 
-    <button on:click={() => console.log("hello world")}>GENERATE</button>
+    <button on:click={() => FetchNewIdea()}>GENERATE</button>
 
     <footer>
         <div class="credits">

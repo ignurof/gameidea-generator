@@ -20,14 +20,23 @@ app.set("views", dir);
 // Change this to fit your static content (Images, etc.)
 app.use("/assets", express.static(buildDir));
 
+// Auto-parse JSON for res.json
+app.use(express.json());
+
 // Render the response with props before responding
 app.get("/", async(req, res, next) => {
     let myIdeas = await ideagenerator.GenerateIdea();
-    console.log(myIdeas);
+
     res.render("index", {
         // Props here
         gameIdeaObj: myIdeas,
     });
+});
+
+app.get("/generate", async(req, res, next) => {
+    let myIdeas = await ideagenerator.GenerateIdea();
+
+    res.json(myIdeas);
 });
 
 app.listen(PORT, () => {
