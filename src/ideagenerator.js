@@ -4,14 +4,17 @@ const GenerateIdea = async() => {
     let genre = "";
     let style = "";
     
-    // Generate random number between 1-10
-    let randomNum = Math.floor((Math.random() * 10) + 1);
-    // Early return out with an error if something went wrong, but it shouldnt
-    if(randomNum < 1 || randomNum > 10) return console.error("ERROR: GenerateIdeas()");
-
-    // Generate all the ideas
+    /*
+        Generate all the ideas using random numbers between 1-10, 
+        always wait for return Promise before moving forward.
+    */
+    let randomNum = await RandomNumber(10);
     theme = ThemeInventor(randomNum);
+
+    randomNum = await RandomNumber(10);
     genre = GenreInventor(randomNum);
+    
+    randomNum = await RandomNumber(10);
     style = StyleInventor(randomNum);
 
     // I need to declare the object after filling the vars
@@ -22,6 +25,14 @@ const GenerateIdea = async() => {
     };
 
     return ideasObj;
+}
+
+const RandomNumber = (randomLimit) => {
+    return new Promise((resolve, reject) => {
+        let rNum = Math.floor((Math.random() * randomLimit) + 1);
+        if(rNum < 1 || rNum > randomLimit) reject(1);
+        resolve(rNum);
+    });
 }
 
 const ThemeInventor = (num) => {
