@@ -11,12 +11,34 @@
         color: rgb(242, 244, 247);
         text-align: center;
         font-size: 16px;
+        max-height: 100vh;
+        overflow: hidden;
     }
 
     h1{
         color: rgb(250, 203, 73);
         text-shadow: 0px 4px 4px rgb(124, 35, 35);
         margin-top: 4em;
+    }
+
+    button{
+        margin: 4em;
+        border: 0;
+        border-radius: .6em;
+        background: rgb(216, 92, 61);
+        color: white;
+        font-size: 1.6em;
+        font-weight: bold;
+        padding: 1em;
+        cursor: pointer;
+        transition: .4s;
+    }
+
+    button:hover{
+        box-shadow: -4px 4px 0px rgb(226, 152, 133),
+            4px 4px 0px rgb(226, 152, 133),
+            -4px -4px 0px rgb(226, 152, 133),
+            4px -4px 0px rgb(226, 152, 133);
     }
 
     .card{
@@ -48,6 +70,20 @@
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-shadow: 2px 4px 4px rgb(184, 184, 184);
     }
+
+    footer{
+        background: rgb(56, 90, 90);
+        min-height: 10em;
+    }
+
+    footer a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .credits{
+        padding-top: 2em;
+    }
 </style>
 
 <main>
@@ -61,4 +97,13 @@
         <legend>GENRE</legend>
         <h4>{genre}</h4>
     </div>
+
+    <button on:click={() => console.log("hello world")}>GENERATE</button>
+
+    <footer>
+        <div class="credits">
+            Copyright 2021 - <a href="ignurof.xyz" target="_blank">ignurof.xyz</a>
+        </div>
+    </footer>
 </main>
+
