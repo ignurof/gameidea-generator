@@ -1,0 +1,2 @@
+# gameidea-generator
+Express, Svelte
