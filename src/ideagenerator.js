@@ -20,8 +20,7 @@ const GenerateIdea = async() => {
         genre,
         style
     };
-    //genre = GenreInventor(randomNum);
-    //style = StyleInventor(randomNum);
+
     return ideasObj;
 }
 
