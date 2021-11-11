@@ -32,8 +32,8 @@
     }
 
     h1{
-        color: rgb(240, 111, 111);
-        text-shadow: 0px 4px 4px rgb(88, 40, 40);
+        color: #ffc153;
+        text-shadow: -4px 4px 4px #2e220e85;
         font-size: 4em;
         font-family: Arial;
         margin-top: 1em;
@@ -43,7 +43,7 @@
         margin: 3em;
         border: 0;
         border-radius: .3em;
-        background: #b82941;
+        background: #b05f6d;
         color: white;
         font-size: 1.6em;
         font-weight: bold;
@@ -93,10 +93,11 @@
         margin-right: 6em;
         fill:rgb(101, 119, 141);
         cursor:pointer;
+        fill: #47b39d;
     }
 
     #closed-lock{
-        fill: red;
+        fill: #eb6b56;
     }
 
     h4{
@@ -109,16 +110,17 @@
     }
 
     footer{
-        background: #1d4229;
+        background: #2a1a3b;
         position:absolute;
         bottom: 0;
         width: 100%;
         padding-bottom: 2em;
+        color: #d8cce4;
     }
 
     footer a{
         text-decoration: none;
-        color: white;
+        color: #d8cce4;
     }
 
     .credits{
