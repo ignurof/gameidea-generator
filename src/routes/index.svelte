@@ -129,7 +129,7 @@
     }
 
     /* Fix iPad issue */
-    @media all and (orientation:landscape) {
+    @media all and (max-device-width:1025px) and (orientation:landscape) {
         footer{
             position:absolute;
             bottom: -20em;
