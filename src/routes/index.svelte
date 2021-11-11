@@ -68,6 +68,7 @@
         border-radius: .6em;
         background: rgb(218, 233, 218);
         width: 18em;
+        height: 19em;
         box-shadow: 2px 8px 4px rgba(0, 0, 0, 0.24),
         -2px 8px 4px rgba(0, 0, 0, 0.24);
         padding-top: 1em;
@@ -82,8 +83,8 @@
     }
 
     .field{
-        display:flex;
-        flex-direction: row;
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     svg{
@@ -125,6 +126,14 @@
 
     .credits{
         padding-top: 2em;
+    }
+
+    /* Fix iPad issue */
+    @media all and (orientation:landscape) {
+        footer{
+            position:absolute;
+            bottom: -20em;
+        }
     }
 </style>
 
