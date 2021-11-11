@@ -49,7 +49,6 @@
         font-weight: bold;
         padding: 1em;
         cursor: pointer;
-        transition: .4s;
     }
 
     button:hover{
@@ -57,6 +56,8 @@
             4px 4px 0px rgb(226, 152, 133),
             -4px -4px 0px rgb(226, 152, 133),
             4px -4px 0px rgb(226, 152, 133);
+            
+        transition: .4s;
     }
 
     .card{

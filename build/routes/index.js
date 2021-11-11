@@ -608,7 +608,7 @@ var Index = (function () {
     			add_location(path, file, 146, 20, 3226);
     			attr_dev(svg, "id", "closed-lock");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "class", "h-5 w-5 svelte-16pswi0");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-196vt1c");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
     			add_location(svg, file, 145, 16, 3049);
@@ -672,7 +672,7 @@ var Index = (function () {
     			attr_dev(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
     			add_location(path, file, 142, 20, 2834);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "class", "h-5 w-5 svelte-16pswi0");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-196vt1c");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
     			add_location(svg, file, 141, 16, 2674);
@@ -746,7 +746,7 @@ var Index = (function () {
     			add_location(path, file, 161, 20, 4135);
     			attr_dev(svg, "id", "closed-lock");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "class", "h-5 w-5 svelte-16pswi0");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-196vt1c");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
     			add_location(svg, file, 160, 16, 3958);
@@ -810,7 +810,7 @@ var Index = (function () {
     			attr_dev(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
     			add_location(path, file, 157, 20, 3743);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "class", "h-5 w-5 svelte-16pswi0");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-196vt1c");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
     			add_location(svg, file, 156, 16, 3583);
@@ -884,7 +884,7 @@ var Index = (function () {
     			add_location(path, file, 176, 20, 5052);
     			attr_dev(svg, "id", "closed-lock");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "class", "h-5 w-5 svelte-16pswi0");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-196vt1c");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
     			add_location(svg, file, 175, 16, 4875);
@@ -948,7 +948,7 @@ var Index = (function () {
     			attr_dev(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
     			add_location(path, file, 172, 20, 4660);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "class", "h-5 w-5 svelte-16pswi0");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-196vt1c");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
     			add_location(svg, file, 171, 16, 4500);
@@ -1166,39 +1166,39 @@ var Index = (function () {
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(h1, "class", "svelte-16pswi0");
+    			attr_dev(h1, "class", "svelte-196vt1c");
     			add_location(h1, file, 134, 4, 2505);
-    			attr_dev(legend0, "class", "svelte-16pswi0");
+    			attr_dev(legend0, "class", "svelte-196vt1c");
     			add_location(legend0, file, 139, 12, 2604);
-    			attr_dev(div0, "class", "field svelte-16pswi0");
+    			attr_dev(div0, "class", "field svelte-196vt1c");
     			add_location(div0, file, 138, 8, 2571);
-    			attr_dev(h40, "class", "svelte-16pswi0");
+    			attr_dev(h40, "class", "svelte-196vt1c");
     			add_location(h40, file, 151, 8, 3452);
-    			attr_dev(legend1, "class", "svelte-16pswi0");
+    			attr_dev(legend1, "class", "svelte-196vt1c");
     			add_location(legend1, file, 154, 12, 3513);
-    			attr_dev(div1, "class", "field svelte-16pswi0");
+    			attr_dev(div1, "class", "field svelte-196vt1c");
     			add_location(div1, file, 153, 8, 3480);
-    			attr_dev(h41, "class", "svelte-16pswi0");
+    			attr_dev(h41, "class", "svelte-196vt1c");
     			add_location(h41, file, 166, 8, 4361);
-    			attr_dev(legend2, "class", "svelte-16pswi0");
+    			attr_dev(legend2, "class", "svelte-196vt1c");
     			add_location(legend2, file, 169, 12, 4430);
-    			attr_dev(div2, "class", "field svelte-16pswi0");
+    			attr_dev(div2, "class", "field svelte-196vt1c");
     			add_location(div2, file, 168, 8, 4397);
-    			attr_dev(h42, "class", "svelte-16pswi0");
+    			attr_dev(h42, "class", "svelte-196vt1c");
     			add_location(h42, file, 181, 8, 5278);
-    			attr_dev(div3, "class", "card svelte-16pswi0");
+    			attr_dev(div3, "class", "card svelte-196vt1c");
     			add_location(div3, file, 136, 4, 2541);
-    			attr_dev(button, "class", "svelte-16pswi0");
+    			attr_dev(button, "class", "svelte-196vt1c");
     			add_location(button, file, 185, 4, 5328);
     			attr_dev(a, "href", "ignurof.xyz");
     			attr_dev(a, "target", "_blank");
-    			attr_dev(a, "class", "svelte-16pswi0");
+    			attr_dev(a, "class", "svelte-196vt1c");
     			add_location(a, file, 189, 29, 5463);
-    			attr_dev(div4, "class", "credits svelte-16pswi0");
+    			attr_dev(div4, "class", "credits svelte-196vt1c");
     			add_location(div4, file, 188, 8, 5411);
-    			attr_dev(footer, "class", "svelte-16pswi0");
+    			attr_dev(footer, "class", "svelte-196vt1c");
     			add_location(footer, file, 187, 4, 5393);
-    			attr_dev(main, "class", "svelte-16pswi0");
+    			attr_dev(main, "class", "svelte-196vt1c");
     			add_location(main, file, 133, 0, 2493);
     		},
     		m: function mount(target, anchor) {
