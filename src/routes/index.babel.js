@@ -780,7 +780,7 @@ function create_else_block_2(ctx) {
       attr(path, "clip-rule", "evenodd");
       attr(svg, "id", "closed-lock");
       attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-      attr(svg, "class", "h-5 w-5 svelte-o0k1tz");
+      attr(svg, "class", "h-5 w-5 svelte-196vt1c");
       attr(svg, "viewBox", "0 0 20 20");
       attr(svg, "fill", "currentColor");
     },
@@ -802,7 +802,7 @@ function create_else_block_2(ctx) {
       dispose();
     }
   };
-} // (133:12) {#if !styleLock}
+} // (141:12) {#if !styleLock}
 
 
 function create_if_block_2(ctx) {
@@ -834,7 +834,7 @@ function create_if_block_2(ctx) {
     h: function h() {
       attr(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
       attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-      attr(svg, "class", "h-5 w-5 svelte-o0k1tz");
+      attr(svg, "class", "h-5 w-5 svelte-196vt1c");
       attr(svg, "viewBox", "0 0 20 20");
       attr(svg, "fill", "currentColor");
     },
@@ -856,7 +856,7 @@ function create_if_block_2(ctx) {
       dispose();
     }
   };
-} // (152:12) {:else}
+} // (160:12) {:else}
 
 
 function create_else_block_1(ctx) {
@@ -894,7 +894,7 @@ function create_else_block_1(ctx) {
       attr(path, "clip-rule", "evenodd");
       attr(svg, "id", "closed-lock");
       attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-      attr(svg, "class", "h-5 w-5 svelte-o0k1tz");
+      attr(svg, "class", "h-5 w-5 svelte-196vt1c");
       attr(svg, "viewBox", "0 0 20 20");
       attr(svg, "fill", "currentColor");
     },
@@ -916,7 +916,7 @@ function create_else_block_1(ctx) {
       dispose();
     }
   };
-} // (148:12) {#if !themeLock}
+} // (156:12) {#if !themeLock}
 
 
 function create_if_block_1(ctx) {
@@ -948,7 +948,7 @@ function create_if_block_1(ctx) {
     h: function h() {
       attr(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
       attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-      attr(svg, "class", "h-5 w-5 svelte-o0k1tz");
+      attr(svg, "class", "h-5 w-5 svelte-196vt1c");
       attr(svg, "viewBox", "0 0 20 20");
       attr(svg, "fill", "currentColor");
     },
@@ -970,7 +970,7 @@ function create_if_block_1(ctx) {
       dispose();
     }
   };
-} // (167:12) {:else}
+} // (175:12) {:else}
 
 
 function create_else_block(ctx) {
@@ -1008,7 +1008,7 @@ function create_else_block(ctx) {
       attr(path, "clip-rule", "evenodd");
       attr(svg, "id", "closed-lock");
       attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-      attr(svg, "class", "h-5 w-5 svelte-o0k1tz");
+      attr(svg, "class", "h-5 w-5 svelte-196vt1c");
       attr(svg, "viewBox", "0 0 20 20");
       attr(svg, "fill", "currentColor");
     },
@@ -1030,7 +1030,7 @@ function create_else_block(ctx) {
       dispose();
     }
   };
-} // (163:12) {#if !genreLock}
+} // (171:12) {#if !genreLock}
 
 
 function create_if_block(ctx) {
@@ -1062,7 +1062,7 @@ function create_if_block(ctx) {
     h: function h() {
       attr(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
       attr(svg, "xmlns", "http://www.w3.org/2000/svg");
-      attr(svg, "class", "h-5 w-5 svelte-o0k1tz");
+      attr(svg, "class", "h-5 w-5 svelte-196vt1c");
       attr(svg, "viewBox", "0 0 20 20");
       attr(svg, "fill", "currentColor");
     },
@@ -1322,24 +1322,24 @@ function create_fragment(ctx) {
       this.h();
     },
     h: function h() {
-      attr(h1, "class", "svelte-o0k1tz");
-      attr(legend0, "class", "svelte-o0k1tz");
-      attr(div0, "class", "field svelte-o0k1tz");
-      attr(h40, "class", "svelte-o0k1tz");
-      attr(legend1, "class", "svelte-o0k1tz");
-      attr(div1, "class", "field svelte-o0k1tz");
-      attr(h41, "class", "svelte-o0k1tz");
-      attr(legend2, "class", "svelte-o0k1tz");
-      attr(div2, "class", "field svelte-o0k1tz");
-      attr(h42, "class", "svelte-o0k1tz");
-      attr(div3, "class", "card svelte-o0k1tz");
-      attr(button, "class", "svelte-o0k1tz");
+      attr(h1, "class", "svelte-196vt1c");
+      attr(legend0, "class", "svelte-196vt1c");
+      attr(div0, "class", "field svelte-196vt1c");
+      attr(h40, "class", "svelte-196vt1c");
+      attr(legend1, "class", "svelte-196vt1c");
+      attr(div1, "class", "field svelte-196vt1c");
+      attr(h41, "class", "svelte-196vt1c");
+      attr(legend2, "class", "svelte-196vt1c");
+      attr(div2, "class", "field svelte-196vt1c");
+      attr(h42, "class", "svelte-196vt1c");
+      attr(div3, "class", "card svelte-196vt1c");
+      attr(button, "class", "svelte-196vt1c");
       attr(a, "href", "ignurof.xyz");
       attr(a, "target", "_blank");
-      attr(a, "class", "svelte-o0k1tz");
-      attr(div4, "class", "credits svelte-o0k1tz");
-      attr(footer, "class", "svelte-o0k1tz");
-      attr(main, "class", "svelte-o0k1tz");
+      attr(a, "class", "svelte-196vt1c");
+      attr(div4, "class", "credits svelte-196vt1c");
+      attr(footer, "class", "svelte-196vt1c");
+      attr(main, "class", "svelte-196vt1c");
     },
     m: function m(target, anchor) {
       insert_hydration(target, main, anchor);

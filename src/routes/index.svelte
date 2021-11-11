@@ -24,63 +24,51 @@
 </script>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
     main{
         color: rgb(242, 244, 247);
-        text-align: center;
         font-size: 16px;
         overflow: hidden;
+        font-family: 'Rubik';
+    }
+
+    .play-icon svg{
+        width: 4em;
+        fill: #B67AFF;
+        position: relative;
+        bottom: 2em;
+        left: 42.5%;
+        margin-bottom: 1.6em;
+        background-image: linear-gradient(to right,#d5c0ee, rgb(194, 195, 255));
+        border-radius: 50%;
     }
 
     h1{
-        color: #ffc153;
-        text-shadow: -4px 4px 4px #2e220e85;
+        color: #F5F5EB;
         font-size: 4em;
-        font-family: Arial;
-        margin-top: 1em;
-    }
-
-    button{
-        margin: 3em;
-        border: 0;
-        border-radius: .3em;
-        background: #b05f6d;
-        color: white;
-        font-size: 1.6em;
-        font-weight: bold;
-        padding: 1em;
-        cursor: pointer;
-    }
-
-    button:hover{
-        box-shadow: -4px 4px 0px rgb(226, 152, 133),
-            4px 4px 0px rgb(226, 152, 133),
-            -4px -4px 0px rgb(226, 152, 133),
-            4px -4px 0px rgb(226, 152, 133);
-            
-        transition: .4s;
+        text-align: center;
     }
 
     .card{
-        color: rgb(20, 20, 20);
-        margin-top: 6em;
+        margin-top: 3em;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 1em;
         border: 0;
         border-radius: .6em;
-        background: rgb(218, 233, 218);
-        width: 18em;
-        height: 19em;
-        box-shadow: 2px 8px 4px rgba(0, 0, 0, 0.24),
-        -2px 8px 4px rgba(0, 0, 0, 0.24);
-        padding-top: 1em;
+        background: #FFFFFF;
+        width: 420px;
+        height: 560px;
+        box-shadow: 0px 6px 6px #00000042;
         padding-bottom: 1em;
     }
 
     legend{
-        color: rgb(101, 95, 104);
-        font-size: 1em;
-        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        margin-left: 7.5em;
+        color: #A6AAA9;
+        font-size: 1.6em;
+        width: 3.2em;
+        margin-left: .6em;
     }
 
     .field{
@@ -88,14 +76,12 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    svg{
+    .field svg{
         width: 1em;
-        margin-bottom: 1.4em;
-        margin-left: .6em;
-        margin-right: 6em;
-        fill:rgb(101, 119, 141);
         cursor:pointer;
         fill: #47b39d;
+        margin-left: -6em;
+        margin-top: .4em;
     }
 
     #closed-lock{
@@ -104,20 +90,45 @@
 
     h4{
         margin: 0;
-        margin-top: .4em;
-        margin-bottom: 1.6em;
         font-size: 1.4em;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        text-shadow: 2px 4px 4px rgb(184, 184, 184);
+        background: #EBF4F2;
+        color: black;
+        width: 90%;
+        height: 6%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2em;
+        border-radius: 8px;
+        padding-left: .6em;
+        padding-top: .4em;
+    }
+
+    button{
+        border: 0;
+        border-radius: 3em;
+        background-image: linear-gradient(to right,#8D7BFF,#D779FE);
+        box-shadow: 0px 3px 6px #D779FE;
+        color: white;
+        font-size: 3em;
+        padding: .2em;
+        padding-left: 1em;
+        padding-right: 1em;
+        margin-left: 1em;
+        cursor: pointer;
+    }
+
+    button:hover{
+        color:#ccfff8;
     }
 
     footer{
-        background: #2a1a3b;
+        background: #3B3747;
         position:absolute;
         bottom: 0;
         width: 100%;
         padding-bottom: 2em;
         color: #d8cce4;
+        text-align: center;
     }
 
     footer a{
@@ -142,7 +153,12 @@
     <h1>Game Idea Generator</h1>
 
     <div class="card">
-
+        <div class="play-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        
         <div class="field">
             <legend>STYLE</legend>
             {#if !styleLock}
@@ -188,13 +204,14 @@
 
         <h4>{genre}</h4>
             
+        <button on:click={() => FetchNewIdea()}>GENERATE</button>
     </div>
 
-    <button on:click={() => FetchNewIdea()}>GENERATE</button>
+    
 
     <footer>
         <div class="credits">
-            Copyright 2021 - <a href="ignurof.xyz" target="_blank">ignurof.xyz</a>
+            Copyright 2021 - <a href="https://ignurof.xyz" target="_blank">ignurof.xyz</a>
         </div>
     </footer>
 </main>
