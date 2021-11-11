@@ -25,11 +25,8 @@ app.use(express.json());
 
 // Render the response with props before responding
 app.get("/", async(req, res, next) => {
-    let myIdeas = await ideagenerator.GenerateIdea();
-
     res.render("index", {
         // Props here
-        gameIdeaObj: myIdeas,
     });
 });
 
@@ -42,6 +39,3 @@ app.get("/generate", async(req, res, next) => {
 app.listen(PORT, () => {
     console.log("Server listening on port: " + PORT);
 });
-
-// TODO: Ta reda på varför det finns en split-sekund där sidans styling inte har laddats in ännu
-// Det kan vara pga await ideagenerator innan res.render, kan också vara pga 2 sidor på en svag AWS instans, men mest troligt into det.

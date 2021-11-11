@@ -567,7 +567,7 @@ var Index = (function () {
     const { console: console_1 } = globals;
     const file = "src\\routes\\index.svelte";
 
-    // (165:12) {:else}
+    // (163:12) {:else}
     function create_else_block_2(ctx) {
     	let svg;
     	let path;
@@ -605,20 +605,20 @@ var Index = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file, 166, 20, 3738);
+    			add_location(path, file, 164, 20, 3662);
     			attr_dev(svg, "id", "closed-lock");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-5 w-5 svelte-fpokw");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file, 165, 16, 3561);
+    			add_location(svg, file, 163, 16, 3485);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, svg, anchor);
     			append_hydration_dev(svg, path);
 
     			if (!mounted) {
-    				dispose = listen_dev(svg, "click", /*click_handler_1*/ ctx[9], false, false, false);
+    				dispose = listen_dev(svg, "click", /*click_handler_1*/ ctx[8], false, false, false);
     				mounted = true;
     			}
     		},
@@ -634,14 +634,14 @@ var Index = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(165:12) {:else}",
+    		source: "(163:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (161:12) {#if !styleLock}
+    // (159:12) {#if !styleLock}
     function create_if_block_2(ctx) {
     	let svg;
     	let path;
@@ -670,19 +670,19 @@ var Index = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
-    			add_location(path, file, 162, 20, 3346);
+    			add_location(path, file, 160, 20, 3270);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-5 w-5 svelte-fpokw");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file, 161, 16, 3186);
+    			add_location(svg, file, 159, 16, 3110);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, svg, anchor);
     			append_hydration_dev(svg, path);
 
     			if (!mounted) {
-    				dispose = listen_dev(svg, "click", /*click_handler*/ ctx[8], false, false, false);
+    				dispose = listen_dev(svg, "click", /*click_handler*/ ctx[7], false, false, false);
     				mounted = true;
     			}
     		},
@@ -698,14 +698,14 @@ var Index = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(161:12) {#if !styleLock}",
+    		source: "(159:12) {#if !styleLock}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (180:12) {:else}
+    // (178:12) {:else}
     function create_else_block_1(ctx) {
     	let svg;
     	let path;
@@ -743,20 +743,20 @@ var Index = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file, 181, 20, 4647);
+    			add_location(path, file, 179, 20, 4571);
     			attr_dev(svg, "id", "closed-lock");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-5 w-5 svelte-fpokw");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file, 180, 16, 4470);
+    			add_location(svg, file, 178, 16, 4394);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, svg, anchor);
     			append_hydration_dev(svg, path);
 
     			if (!mounted) {
-    				dispose = listen_dev(svg, "click", /*click_handler_3*/ ctx[11], false, false, false);
+    				dispose = listen_dev(svg, "click", /*click_handler_3*/ ctx[10], false, false, false);
     				mounted = true;
     			}
     		},
@@ -772,14 +772,14 @@ var Index = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(180:12) {:else}",
+    		source: "(178:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (176:12) {#if !themeLock}
+    // (174:12) {#if !themeLock}
     function create_if_block_1(ctx) {
     	let svg;
     	let path;
@@ -808,19 +808,19 @@ var Index = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
-    			add_location(path, file, 177, 20, 4255);
+    			add_location(path, file, 175, 20, 4179);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-5 w-5 svelte-fpokw");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file, 176, 16, 4095);
+    			add_location(svg, file, 174, 16, 4019);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, svg, anchor);
     			append_hydration_dev(svg, path);
 
     			if (!mounted) {
-    				dispose = listen_dev(svg, "click", /*click_handler_2*/ ctx[10], false, false, false);
+    				dispose = listen_dev(svg, "click", /*click_handler_2*/ ctx[9], false, false, false);
     				mounted = true;
     			}
     		},
@@ -836,14 +836,14 @@ var Index = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(176:12) {#if !themeLock}",
+    		source: "(174:12) {#if !themeLock}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (195:12) {:else}
+    // (193:12) {:else}
     function create_else_block(ctx) {
     	let svg;
     	let path;
@@ -881,20 +881,20 @@ var Index = (function () {
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file, 196, 20, 5564);
+    			add_location(path, file, 194, 20, 5488);
     			attr_dev(svg, "id", "closed-lock");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-5 w-5 svelte-fpokw");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file, 195, 16, 5387);
+    			add_location(svg, file, 193, 16, 5311);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, svg, anchor);
     			append_hydration_dev(svg, path);
 
     			if (!mounted) {
-    				dispose = listen_dev(svg, "click", /*click_handler_5*/ ctx[13], false, false, false);
+    				dispose = listen_dev(svg, "click", /*click_handler_5*/ ctx[12], false, false, false);
     				mounted = true;
     			}
     		},
@@ -910,14 +910,14 @@ var Index = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(195:12) {:else}",
+    		source: "(193:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (191:12) {#if !genreLock}
+    // (189:12) {#if !genreLock}
     function create_if_block(ctx) {
     	let svg;
     	let path;
@@ -946,19 +946,19 @@ var Index = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
-    			add_location(path, file, 192, 20, 5172);
+    			add_location(path, file, 190, 20, 5096);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-5 w-5 svelte-fpokw");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file, 191, 16, 5012);
+    			add_location(svg, file, 189, 16, 4936);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, svg, anchor);
     			append_hydration_dev(svg, path);
 
     			if (!mounted) {
-    				dispose = listen_dev(svg, "click", /*click_handler_4*/ ctx[12], false, false, false);
+    				dispose = listen_dev(svg, "click", /*click_handler_4*/ ctx[11], false, false, false);
     				mounted = true;
     			}
     		},
@@ -974,7 +974,7 @@ var Index = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(191:12) {#if !genreLock}",
+    		source: "(189:12) {#if !genreLock}",
     		ctx
     	});
 
@@ -1197,50 +1197,50 @@ var Index = (function () {
     		},
     		h: function hydrate() {
     			attr_dev(h1, "class", "svelte-fpokw");
-    			add_location(h1, file, 149, 4, 2656);
+    			add_location(h1, file, 147, 4, 2580);
     			attr_dev(path, "fill-rule", "evenodd");
     			attr_dev(path, "d", "M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z");
     			attr_dev(path, "clip-rule", "evenodd");
-    			add_location(path, file, 154, 16, 2871);
+    			add_location(path, file, 152, 16, 2795);
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "class", "h-5 w-5 svelte-fpokw");
     			attr_dev(svg, "viewBox", "0 0 20 20");
     			attr_dev(svg, "fill", "currentColor");
-    			add_location(svg, file, 153, 12, 2757);
+    			add_location(svg, file, 151, 12, 2681);
     			attr_dev(div0, "class", "play-icon svelte-fpokw");
-    			add_location(div0, file, 152, 8, 2720);
+    			add_location(div0, file, 150, 8, 2644);
     			attr_dev(legend0, "class", "svelte-fpokw");
-    			add_location(legend0, file, 159, 12, 3116);
+    			add_location(legend0, file, 157, 12, 3040);
     			attr_dev(div1, "class", "field svelte-fpokw");
-    			add_location(div1, file, 158, 8, 3083);
+    			add_location(div1, file, 156, 8, 3007);
     			attr_dev(h40, "class", "svelte-fpokw");
-    			add_location(h40, file, 171, 8, 3964);
+    			add_location(h40, file, 169, 8, 3888);
     			attr_dev(legend1, "class", "svelte-fpokw");
-    			add_location(legend1, file, 174, 12, 4025);
+    			add_location(legend1, file, 172, 12, 3949);
     			attr_dev(div2, "class", "field svelte-fpokw");
-    			add_location(div2, file, 173, 8, 3992);
+    			add_location(div2, file, 171, 8, 3916);
     			attr_dev(h41, "class", "svelte-fpokw");
-    			add_location(h41, file, 186, 8, 4873);
+    			add_location(h41, file, 184, 8, 4797);
     			attr_dev(legend2, "class", "svelte-fpokw");
-    			add_location(legend2, file, 189, 12, 4942);
+    			add_location(legend2, file, 187, 12, 4866);
     			attr_dev(div3, "class", "field svelte-fpokw");
-    			add_location(div3, file, 188, 8, 4909);
+    			add_location(div3, file, 186, 8, 4833);
     			attr_dev(h42, "class", "svelte-fpokw");
-    			add_location(h42, file, 201, 8, 5790);
+    			add_location(h42, file, 199, 8, 5714);
     			attr_dev(button, "class", "svelte-fpokw");
-    			add_location(button, file, 203, 8, 5830);
+    			add_location(button, file, 201, 8, 5754);
     			attr_dev(div4, "class", "card svelte-fpokw");
-    			add_location(div4, file, 151, 4, 2692);
+    			add_location(div4, file, 149, 4, 2616);
     			attr_dev(a, "href", "https://ignurof.xyz");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "class", "svelte-fpokw");
-    			add_location(a, file, 210, 29, 5985);
+    			add_location(a, file, 208, 29, 5909);
     			attr_dev(div5, "class", "credits svelte-fpokw");
-    			add_location(div5, file, 209, 8, 5933);
+    			add_location(div5, file, 207, 8, 5857);
     			attr_dev(footer, "class", "svelte-fpokw");
-    			add_location(footer, file, 208, 4, 5915);
+    			add_location(footer, file, 206, 4, 5839);
     			attr_dev(main, "class", "svelte-fpokw");
-    			add_location(main, file, 148, 0, 2644);
+    			add_location(main, file, 146, 0, 2568);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, main, anchor);
@@ -1289,7 +1289,7 @@ var Index = (function () {
     			append_hydration_dev(a, t21);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler_6*/ ctx[14], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler_6*/ ctx[13], false, false, false);
     				mounted = true;
     			}
     		},
@@ -1362,10 +1362,9 @@ var Index = (function () {
     function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Routes', slots, []);
-    	let { gameIdeaObj } = $$props;
-    	let style = gameIdeaObj.style;
-    	let theme = gameIdeaObj.theme;
-    	let genre = gameIdeaObj.genre;
+    	let style = "";
+    	let theme = "";
+    	let genre = "";
     	let styleLock = false;
     	let themeLock = false;
     	let genreLock = false;
@@ -1380,7 +1379,7 @@ var Index = (function () {
     		if (!genreLock) $$invalidate(2, genre = result.genre);
     	};
 
-    	const writable_props = ['gameIdeaObj'];
+    	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1.warn(`<Routes> was created with unknown prop '${key}'`);
@@ -1412,12 +1411,7 @@ var Index = (function () {
 
     	const click_handler_6 = () => FetchNewIdea();
 
-    	$$self.$$set = $$props => {
-    		if ('gameIdeaObj' in $$props) $$invalidate(7, gameIdeaObj = $$props.gameIdeaObj);
-    	};
-
     	$$self.$capture_state = () => ({
-    		gameIdeaObj,
     		style,
     		theme,
     		genre,
@@ -1428,7 +1422,6 @@ var Index = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('gameIdeaObj' in $$props) $$invalidate(7, gameIdeaObj = $$props.gameIdeaObj);
     		if ('style' in $$props) $$invalidate(0, style = $$props.style);
     		if ('theme' in $$props) $$invalidate(1, theme = $$props.theme);
     		if ('genre' in $$props) $$invalidate(2, genre = $$props.genre);
@@ -1449,7 +1442,6 @@ var Index = (function () {
     		themeLock,
     		genreLock,
     		FetchNewIdea,
-    		gameIdeaObj,
     		click_handler,
     		click_handler_1,
     		click_handler_2,
@@ -1463,7 +1455,7 @@ var Index = (function () {
     class Routes extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { gameIdeaObj: 7 });
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1471,21 +1463,6 @@ var Index = (function () {
     			options,
     			id: create_fragment.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*gameIdeaObj*/ ctx[7] === undefined && !('gameIdeaObj' in props)) {
-    			console_1.warn("<Routes> was created without expected prop 'gameIdeaObj'");
-    		}
-    	}
-
-    	get gameIdeaObj() {
-    		throw new Error("<Routes>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set gameIdeaObj(value) {
-    		throw new Error("<Routes>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 

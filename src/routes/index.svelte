@@ -1,9 +1,7 @@
 <script>
-    export let gameIdeaObj;
-
-    let style = gameIdeaObj.style;
-    let theme = gameIdeaObj.theme;
-    let genre = gameIdeaObj.genre;
+    let style = "";
+    let theme = "";
+    let genre = "";
 
     let styleLock = false;
     let themeLock = false;
