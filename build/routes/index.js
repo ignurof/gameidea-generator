@@ -165,6 +165,9 @@ var Index = (function () {
     function element(name) {
         return document.createElement(name);
     }
+    function svg_element(name) {
+        return document.createElementNS('http://www.w3.org/2000/svg', name);
+    }
     function text(data) {
         return document.createTextNode(data);
     }
@@ -254,6 +257,9 @@ var Index = (function () {
     }
     function claim_element(nodes, name, attributes) {
         return claim_element_base(nodes, name, attributes, element);
+    }
+    function claim_svg_element(nodes, name, attributes) {
+        return claim_element_base(nodes, name, attributes, svg_element);
     }
     function claim_text(nodes, data) {
         return claim_node(nodes, (node) => node.nodeType === 3, (node) => {
@@ -561,40 +567,772 @@ var Index = (function () {
     const { console: console_1 } = globals;
     const file = "src\\routes\\index.svelte";
 
+    // (158:12) {:else}
+    function create_else_block_5(ctx) {
+    	let svg;
+    	let path;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			svg = claim_svg_element(nodes, "svg", {
+    				id: true,
+    				xmlns: true,
+    				class: true,
+    				viewBox: true,
+    				fill: true
+    			});
+
+    			var svg_nodes = children(svg);
+
+    			path = claim_svg_element(svg_nodes, "path", {
+    				"fill-rule": true,
+    				d: true,
+    				"clip-rule": true
+    			});
+
+    			children(path).forEach(detach_dev);
+    			svg_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(path, "fill-rule", "evenodd");
+    			attr_dev(path, "d", "M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z");
+    			attr_dev(path, "clip-rule", "evenodd");
+    			add_location(path, file, 159, 20, 3686);
+    			attr_dev(svg, "id", "closed-lock");
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-11rvpx5");
+    			attr_dev(svg, "viewBox", "0 0 20 20");
+    			attr_dev(svg, "fill", "currentColor");
+    			add_location(svg, file, 158, 16, 3508);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, svg, anchor);
+    			append_hydration_dev(svg, path);
+
+    			if (!mounted) {
+    				dispose = listen_dev(svg, "click", /*click_handler_1*/ ctx[13], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(svg);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_5.name,
+    		type: "else",
+    		source: "(158:12) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (154:12) {#if !styleLock}
+    function create_if_block_5(ctx) {
+    	let svg;
+    	let path;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			svg = claim_svg_element(nodes, "svg", {
+    				xmlns: true,
+    				class: true,
+    				viewBox: true,
+    				fill: true
+    			});
+
+    			var svg_nodes = children(svg);
+    			path = claim_svg_element(svg_nodes, "path", { d: true });
+    			children(path).forEach(detach_dev);
+    			svg_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
+    			add_location(path, file, 155, 20, 3293);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-11rvpx5");
+    			attr_dev(svg, "viewBox", "0 0 20 20");
+    			attr_dev(svg, "fill", "currentColor");
+    			add_location(svg, file, 154, 16, 3132);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, svg, anchor);
+    			append_hydration_dev(svg, path);
+
+    			if (!mounted) {
+    				dispose = listen_dev(svg, "click", /*click_handler*/ ctx[12], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(svg);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_5.name,
+    		type: "if",
+    		source: "(154:12) {#if !styleLock}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (166:8) {:else}
+    function create_else_block_4(ctx) {
+    	let h4;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			h4 = element("h4");
+    			t = text(/*styleTempField*/ ctx[6]);
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			h4 = claim_element(nodes, "H4", { class: true });
+    			var h4_nodes = children(h4);
+    			t = claim_text(h4_nodes, /*styleTempField*/ ctx[6]);
+    			h4_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(h4, "class", "svelte-11rvpx5");
+    			add_location(h4, file, 166, 12, 3987);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, h4, anchor);
+    			append_hydration_dev(h4, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*styleTempField*/ 64) set_data_dev(t, /*styleTempField*/ ctx[6]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h4);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_4.name,
+    		type: "else",
+    		source: "(166:8) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (164:8) {#if !styleLock}
+    function create_if_block_4(ctx) {
+    	let h4;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			h4 = element("h4");
+    			t = text(/*style*/ ctx[0]);
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			h4 = claim_element(nodes, "H4", { class: true });
+    			var h4_nodes = children(h4);
+    			t = claim_text(h4_nodes, /*style*/ ctx[0]);
+    			h4_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(h4, "class", "svelte-11rvpx5");
+    			add_location(h4, file, 164, 12, 3940);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, h4, anchor);
+    			append_hydration_dev(h4, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*style*/ 1) set_data_dev(t, /*style*/ ctx[0]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h4);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_4.name,
+    		type: "if",
+    		source: "(164:8) {#if !styleLock}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (176:12) {:else}
+    function create_else_block_3(ctx) {
+    	let svg;
+    	let path;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			svg = claim_svg_element(nodes, "svg", {
+    				id: true,
+    				xmlns: true,
+    				class: true,
+    				viewBox: true,
+    				fill: true
+    			});
+
+    			var svg_nodes = children(svg);
+
+    			path = claim_svg_element(svg_nodes, "path", {
+    				"fill-rule": true,
+    				d: true,
+    				"clip-rule": true
+    			});
+
+    			children(path).forEach(detach_dev);
+    			svg_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(path, "fill-rule", "evenodd");
+    			attr_dev(path, "d", "M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z");
+    			attr_dev(path, "clip-rule", "evenodd");
+    			add_location(path, file, 177, 20, 4696);
+    			attr_dev(svg, "id", "closed-lock");
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-11rvpx5");
+    			attr_dev(svg, "viewBox", "0 0 20 20");
+    			attr_dev(svg, "fill", "currentColor");
+    			add_location(svg, file, 176, 16, 4518);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, svg, anchor);
+    			append_hydration_dev(svg, path);
+
+    			if (!mounted) {
+    				dispose = listen_dev(svg, "click", /*click_handler_3*/ ctx[15], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(svg);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_3.name,
+    		type: "else",
+    		source: "(176:12) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (172:12) {#if !themeLock}
+    function create_if_block_3(ctx) {
+    	let svg;
+    	let path;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			svg = claim_svg_element(nodes, "svg", {
+    				xmlns: true,
+    				class: true,
+    				viewBox: true,
+    				fill: true
+    			});
+
+    			var svg_nodes = children(svg);
+    			path = claim_svg_element(svg_nodes, "path", { d: true });
+    			children(path).forEach(detach_dev);
+    			svg_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
+    			add_location(path, file, 173, 20, 4303);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-11rvpx5");
+    			attr_dev(svg, "viewBox", "0 0 20 20");
+    			attr_dev(svg, "fill", "currentColor");
+    			add_location(svg, file, 172, 16, 4142);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, svg, anchor);
+    			append_hydration_dev(svg, path);
+
+    			if (!mounted) {
+    				dispose = listen_dev(svg, "click", /*click_handler_2*/ ctx[14], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(svg);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3.name,
+    		type: "if",
+    		source: "(172:12) {#if !themeLock}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (184:8) {:else}
+    function create_else_block_2(ctx) {
+    	let h4;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			h4 = element("h4");
+    			t = text(/*themeTempField*/ ctx[7]);
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			h4 = claim_element(nodes, "H4", { class: true });
+    			var h4_nodes = children(h4);
+    			t = claim_text(h4_nodes, /*themeTempField*/ ctx[7]);
+    			h4_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(h4, "class", "svelte-11rvpx5");
+    			add_location(h4, file, 184, 12, 4997);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, h4, anchor);
+    			append_hydration_dev(h4, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*themeTempField*/ 128) set_data_dev(t, /*themeTempField*/ ctx[7]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h4);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_2.name,
+    		type: "else",
+    		source: "(184:8) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (182:8) {#if !themeLock}
+    function create_if_block_2(ctx) {
+    	let h4;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			h4 = element("h4");
+    			t = text(/*theme*/ ctx[1]);
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			h4 = claim_element(nodes, "H4", { class: true });
+    			var h4_nodes = children(h4);
+    			t = claim_text(h4_nodes, /*theme*/ ctx[1]);
+    			h4_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(h4, "class", "svelte-11rvpx5");
+    			add_location(h4, file, 182, 12, 4950);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, h4, anchor);
+    			append_hydration_dev(h4, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*theme*/ 2) set_data_dev(t, /*theme*/ ctx[1]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h4);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(182:8) {#if !themeLock}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (193:12) {:else}
+    function create_else_block_1(ctx) {
+    	let svg;
+    	let path;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			svg = claim_svg_element(nodes, "svg", {
+    				id: true,
+    				xmlns: true,
+    				class: true,
+    				viewBox: true,
+    				fill: true
+    			});
+
+    			var svg_nodes = children(svg);
+
+    			path = claim_svg_element(svg_nodes, "path", {
+    				"fill-rule": true,
+    				d: true,
+    				"clip-rule": true
+    			});
+
+    			children(path).forEach(detach_dev);
+    			svg_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(path, "fill-rule", "evenodd");
+    			attr_dev(path, "d", "M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z");
+    			attr_dev(path, "clip-rule", "evenodd");
+    			add_location(path, file, 194, 20, 5704);
+    			attr_dev(svg, "id", "closed-lock");
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-11rvpx5");
+    			attr_dev(svg, "viewBox", "0 0 20 20");
+    			attr_dev(svg, "fill", "currentColor");
+    			add_location(svg, file, 193, 16, 5526);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, svg, anchor);
+    			append_hydration_dev(svg, path);
+
+    			if (!mounted) {
+    				dispose = listen_dev(svg, "click", /*click_handler_5*/ ctx[17], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(svg);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_1.name,
+    		type: "else",
+    		source: "(193:12) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (189:12) {#if !genreLock}
+    function create_if_block_1(ctx) {
+    	let svg;
+    	let path;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			svg = claim_svg_element(nodes, "svg", {
+    				xmlns: true,
+    				class: true,
+    				viewBox: true,
+    				fill: true
+    			});
+
+    			var svg_nodes = children(svg);
+    			path = claim_svg_element(svg_nodes, "path", { d: true });
+    			children(path).forEach(detach_dev);
+    			svg_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(path, "d", "M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z");
+    			add_location(path, file, 190, 20, 5311);
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg, "class", "h-5 w-5 svelte-11rvpx5");
+    			attr_dev(svg, "viewBox", "0 0 20 20");
+    			attr_dev(svg, "fill", "currentColor");
+    			add_location(svg, file, 189, 16, 5150);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, svg, anchor);
+    			append_hydration_dev(svg, path);
+
+    			if (!mounted) {
+    				dispose = listen_dev(svg, "click", /*click_handler_4*/ ctx[16], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(svg);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(189:12) {#if !genreLock}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (201:8) {:else}
+    function create_else_block(ctx) {
+    	let h4;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			h4 = element("h4");
+    			t = text(/*genreTempField*/ ctx[8]);
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			h4 = claim_element(nodes, "H4", { class: true });
+    			var h4_nodes = children(h4);
+    			t = claim_text(h4_nodes, /*genreTempField*/ ctx[8]);
+    			h4_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(h4, "class", "svelte-11rvpx5");
+    			add_location(h4, file, 201, 12, 6005);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, h4, anchor);
+    			append_hydration_dev(h4, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*genreTempField*/ 256) set_data_dev(t, /*genreTempField*/ ctx[8]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h4);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(201:8) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (199:8) {#if !genreLock}
+    function create_if_block(ctx) {
+    	let h4;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			h4 = element("h4");
+    			t = text(/*genre*/ ctx[2]);
+    			this.h();
+    		},
+    		l: function claim(nodes) {
+    			h4 = claim_element(nodes, "H4", { class: true });
+    			var h4_nodes = children(h4);
+    			t = claim_text(h4_nodes, /*genre*/ ctx[2]);
+    			h4_nodes.forEach(detach_dev);
+    			this.h();
+    		},
+    		h: function hydrate() {
+    			attr_dev(h4, "class", "svelte-11rvpx5");
+    			add_location(h4, file, 199, 12, 5958);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_hydration_dev(target, h4, anchor);
+    			append_hydration_dev(h4, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*genre*/ 4) set_data_dev(t, /*genre*/ ctx[2]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h4);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(199:8) {#if !genreLock}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment(ctx) {
     	let main;
     	let h1;
     	let t0;
     	let t1;
+    	let div3;
     	let div0;
     	let legend0;
     	let t2;
     	let t3;
-    	let h40;
     	let t4;
     	let t5;
+    	let div1;
     	let legend1;
     	let t6;
     	let t7;
-    	let h41;
     	let t8;
     	let t9;
+    	let div2;
     	let legend2;
     	let t10;
     	let t11;
-    	let h42;
     	let t12;
     	let t13;
     	let button;
     	let t14;
     	let t15;
     	let footer;
-    	let div1;
+    	let div4;
     	let t16;
     	let a;
     	let t17;
     	let mounted;
     	let dispose;
+
+    	function select_block_type(ctx, dirty) {
+    		if (!/*styleLock*/ ctx[3]) return create_if_block_5;
+    		return create_else_block_5;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block0 = current_block_type(ctx);
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (!/*styleLock*/ ctx[3]) return create_if_block_4;
+    		return create_else_block_4;
+    	}
+
+    	let current_block_type_1 = select_block_type_1(ctx);
+    	let if_block1 = current_block_type_1(ctx);
+
+    	function select_block_type_2(ctx, dirty) {
+    		if (!/*themeLock*/ ctx[4]) return create_if_block_3;
+    		return create_else_block_3;
+    	}
+
+    	let current_block_type_2 = select_block_type_2(ctx);
+    	let if_block2 = current_block_type_2(ctx);
+
+    	function select_block_type_3(ctx, dirty) {
+    		if (!/*themeLock*/ ctx[4]) return create_if_block_2;
+    		return create_else_block_2;
+    	}
+
+    	let current_block_type_3 = select_block_type_3(ctx);
+    	let if_block3 = current_block_type_3(ctx);
+
+    	function select_block_type_4(ctx, dirty) {
+    		if (!/*genreLock*/ ctx[5]) return create_if_block_1;
+    		return create_else_block_1;
+    	}
+
+    	let current_block_type_4 = select_block_type_4(ctx);
+    	let if_block4 = current_block_type_4(ctx);
+
+    	function select_block_type_5(ctx, dirty) {
+    		if (!/*genreLock*/ ctx[5]) return create_if_block;
+    		return create_else_block;
+    	}
+
+    	let current_block_type_5 = select_block_type_5(ctx);
+    	let if_block5 = current_block_type_5(ctx);
 
     	const block = {
     		c: function create() {
@@ -602,30 +1340,36 @@ var Index = (function () {
     			h1 = element("h1");
     			t0 = text("Game Idea Generator");
     			t1 = space();
+    			div3 = element("div");
     			div0 = element("div");
     			legend0 = element("legend");
     			t2 = text("STYLE");
     			t3 = space();
-    			h40 = element("h4");
-    			t4 = text(/*style*/ ctx[0]);
+    			if_block0.c();
+    			t4 = space();
+    			if_block1.c();
     			t5 = space();
+    			div1 = element("div");
     			legend1 = element("legend");
     			t6 = text("THEME");
     			t7 = space();
-    			h41 = element("h4");
-    			t8 = text(/*theme*/ ctx[1]);
+    			if_block2.c();
+    			t8 = space();
+    			if_block3.c();
     			t9 = space();
+    			div2 = element("div");
     			legend2 = element("legend");
     			t10 = text("GENRE");
     			t11 = space();
-    			h42 = element("h4");
-    			t12 = text(/*genre*/ ctx[2]);
+    			if_block4.c();
+    			t12 = space();
+    			if_block5.c();
     			t13 = space();
     			button = element("button");
     			t14 = text("GENERATE");
     			t15 = space();
     			footer = element("footer");
-    			div1 = element("div");
+    			div4 = element("div");
     			t16 = text("Copyright 2021 - ");
     			a = element("a");
     			t17 = text("ignurof.xyz");
@@ -639,38 +1383,44 @@ var Index = (function () {
     			t0 = claim_text(h1_nodes, "Game Idea Generator");
     			h1_nodes.forEach(detach_dev);
     			t1 = claim_space(main_nodes);
-    			div0 = claim_element(main_nodes, "DIV", { class: true });
+    			div3 = claim_element(main_nodes, "DIV", { class: true });
+    			var div3_nodes = children(div3);
+    			div0 = claim_element(div3_nodes, "DIV", { class: true });
     			var div0_nodes = children(div0);
     			legend0 = claim_element(div0_nodes, "LEGEND", { class: true });
     			var legend0_nodes = children(legend0);
     			t2 = claim_text(legend0_nodes, "STYLE");
     			legend0_nodes.forEach(detach_dev);
     			t3 = claim_space(div0_nodes);
-    			h40 = claim_element(div0_nodes, "H4", { class: true });
-    			var h40_nodes = children(h40);
-    			t4 = claim_text(h40_nodes, /*style*/ ctx[0]);
-    			h40_nodes.forEach(detach_dev);
-    			t5 = claim_space(div0_nodes);
-    			legend1 = claim_element(div0_nodes, "LEGEND", { class: true });
+    			if_block0.l(div0_nodes);
+    			div0_nodes.forEach(detach_dev);
+    			t4 = claim_space(div3_nodes);
+    			if_block1.l(div3_nodes);
+    			t5 = claim_space(div3_nodes);
+    			div1 = claim_element(div3_nodes, "DIV", { class: true });
+    			var div1_nodes = children(div1);
+    			legend1 = claim_element(div1_nodes, "LEGEND", { class: true });
     			var legend1_nodes = children(legend1);
     			t6 = claim_text(legend1_nodes, "THEME");
     			legend1_nodes.forEach(detach_dev);
-    			t7 = claim_space(div0_nodes);
-    			h41 = claim_element(div0_nodes, "H4", { class: true });
-    			var h41_nodes = children(h41);
-    			t8 = claim_text(h41_nodes, /*theme*/ ctx[1]);
-    			h41_nodes.forEach(detach_dev);
-    			t9 = claim_space(div0_nodes);
-    			legend2 = claim_element(div0_nodes, "LEGEND", { class: true });
+    			t7 = claim_space(div1_nodes);
+    			if_block2.l(div1_nodes);
+    			div1_nodes.forEach(detach_dev);
+    			t8 = claim_space(div3_nodes);
+    			if_block3.l(div3_nodes);
+    			t9 = claim_space(div3_nodes);
+    			div2 = claim_element(div3_nodes, "DIV", { class: true });
+    			var div2_nodes = children(div2);
+    			legend2 = claim_element(div2_nodes, "LEGEND", { class: true });
     			var legend2_nodes = children(legend2);
     			t10 = claim_text(legend2_nodes, "GENRE");
     			legend2_nodes.forEach(detach_dev);
-    			t11 = claim_space(div0_nodes);
-    			h42 = claim_element(div0_nodes, "H4", { class: true });
-    			var h42_nodes = children(h42);
-    			t12 = claim_text(h42_nodes, /*genre*/ ctx[2]);
-    			h42_nodes.forEach(detach_dev);
-    			div0_nodes.forEach(detach_dev);
+    			t11 = claim_space(div2_nodes);
+    			if_block4.l(div2_nodes);
+    			div2_nodes.forEach(detach_dev);
+    			t12 = claim_space(div3_nodes);
+    			if_block5.l(div3_nodes);
+    			div3_nodes.forEach(detach_dev);
     			t13 = claim_space(main_nodes);
     			button = claim_element(main_nodes, "BUTTON", { class: true });
     			var button_nodes = children(button);
@@ -679,95 +1429,175 @@ var Index = (function () {
     			t15 = claim_space(main_nodes);
     			footer = claim_element(main_nodes, "FOOTER", { class: true });
     			var footer_nodes = children(footer);
-    			div1 = claim_element(footer_nodes, "DIV", { class: true });
-    			var div1_nodes = children(div1);
-    			t16 = claim_text(div1_nodes, "Copyright 2021 - ");
-    			a = claim_element(div1_nodes, "A", { href: true, target: true, class: true });
+    			div4 = claim_element(footer_nodes, "DIV", { class: true });
+    			var div4_nodes = children(div4);
+    			t16 = claim_text(div4_nodes, "Copyright 2021 - ");
+    			a = claim_element(div4_nodes, "A", { href: true, target: true, class: true });
     			var a_nodes = children(a);
     			t17 = claim_text(a_nodes, "ignurof.xyz");
     			a_nodes.forEach(detach_dev);
-    			div1_nodes.forEach(detach_dev);
+    			div4_nodes.forEach(detach_dev);
     			footer_nodes.forEach(detach_dev);
     			main_nodes.forEach(detach_dev);
     			this.h();
     		},
     		h: function hydrate() {
-    			attr_dev(h1, "class", "svelte-1ikbsl9");
-    			add_location(h1, file, 95, 4, 1797);
-    			attr_dev(legend0, "class", "svelte-1ikbsl9");
-    			add_location(legend0, file, 98, 8, 1861);
-    			attr_dev(h40, "class", "svelte-1ikbsl9");
-    			add_location(h40, file, 99, 8, 1893);
-    			attr_dev(legend1, "class", "svelte-1ikbsl9");
-    			add_location(legend1, file, 100, 8, 1919);
-    			attr_dev(h41, "class", "svelte-1ikbsl9");
-    			add_location(h41, file, 101, 8, 1951);
-    			attr_dev(legend2, "class", "svelte-1ikbsl9");
-    			add_location(legend2, file, 102, 8, 1977);
-    			attr_dev(h42, "class", "svelte-1ikbsl9");
-    			add_location(h42, file, 103, 8, 2009);
-    			attr_dev(div0, "class", "card svelte-1ikbsl9");
-    			add_location(div0, file, 97, 4, 1833);
-    			attr_dev(button, "class", "svelte-1ikbsl9");
-    			add_location(button, file, 106, 4, 2045);
+    			attr_dev(h1, "class", "svelte-11rvpx5");
+    			add_location(h1, file, 147, 4, 2963);
+    			attr_dev(legend0, "class", "svelte-11rvpx5");
+    			add_location(legend0, file, 152, 12, 3062);
+    			attr_dev(div0, "class", "field svelte-11rvpx5");
+    			add_location(div0, file, 151, 8, 3029);
+    			attr_dev(legend1, "class", "svelte-11rvpx5");
+    			add_location(legend1, file, 170, 12, 4072);
+    			attr_dev(div1, "class", "field svelte-11rvpx5");
+    			add_location(div1, file, 169, 8, 4039);
+    			attr_dev(legend2, "class", "svelte-11rvpx5");
+    			add_location(legend2, file, 187, 12, 5080);
+    			attr_dev(div2, "class", "field svelte-11rvpx5");
+    			add_location(div2, file, 186, 8, 5047);
+    			attr_dev(div3, "class", "card svelte-11rvpx5");
+    			add_location(div3, file, 149, 4, 2999);
+    			attr_dev(button, "class", "svelte-11rvpx5");
+    			add_location(button, file, 206, 4, 6079);
     			attr_dev(a, "href", "ignurof.xyz");
     			attr_dev(a, "target", "_blank");
-    			attr_dev(a, "class", "svelte-1ikbsl9");
-    			add_location(a, file, 110, 29, 2180);
-    			attr_dev(div1, "class", "credits svelte-1ikbsl9");
-    			add_location(div1, file, 109, 8, 2128);
-    			attr_dev(footer, "class", "svelte-1ikbsl9");
-    			add_location(footer, file, 108, 4, 2110);
-    			attr_dev(main, "class", "svelte-1ikbsl9");
-    			add_location(main, file, 94, 0, 1785);
+    			attr_dev(a, "class", "svelte-11rvpx5");
+    			add_location(a, file, 210, 29, 6214);
+    			attr_dev(div4, "class", "credits svelte-11rvpx5");
+    			add_location(div4, file, 209, 8, 6162);
+    			attr_dev(footer, "class", "svelte-11rvpx5");
+    			add_location(footer, file, 208, 4, 6144);
+    			attr_dev(main, "class", "svelte-11rvpx5");
+    			add_location(main, file, 146, 0, 2951);
     		},
     		m: function mount(target, anchor) {
     			insert_hydration_dev(target, main, anchor);
     			append_hydration_dev(main, h1);
     			append_hydration_dev(h1, t0);
     			append_hydration_dev(main, t1);
-    			append_hydration_dev(main, div0);
+    			append_hydration_dev(main, div3);
+    			append_hydration_dev(div3, div0);
     			append_hydration_dev(div0, legend0);
     			append_hydration_dev(legend0, t2);
     			append_hydration_dev(div0, t3);
-    			append_hydration_dev(div0, h40);
-    			append_hydration_dev(h40, t4);
-    			append_hydration_dev(div0, t5);
-    			append_hydration_dev(div0, legend1);
+    			if_block0.m(div0, null);
+    			append_hydration_dev(div3, t4);
+    			if_block1.m(div3, null);
+    			append_hydration_dev(div3, t5);
+    			append_hydration_dev(div3, div1);
+    			append_hydration_dev(div1, legend1);
     			append_hydration_dev(legend1, t6);
-    			append_hydration_dev(div0, t7);
-    			append_hydration_dev(div0, h41);
-    			append_hydration_dev(h41, t8);
-    			append_hydration_dev(div0, t9);
-    			append_hydration_dev(div0, legend2);
+    			append_hydration_dev(div1, t7);
+    			if_block2.m(div1, null);
+    			append_hydration_dev(div3, t8);
+    			if_block3.m(div3, null);
+    			append_hydration_dev(div3, t9);
+    			append_hydration_dev(div3, div2);
+    			append_hydration_dev(div2, legend2);
     			append_hydration_dev(legend2, t10);
-    			append_hydration_dev(div0, t11);
-    			append_hydration_dev(div0, h42);
-    			append_hydration_dev(h42, t12);
+    			append_hydration_dev(div2, t11);
+    			if_block4.m(div2, null);
+    			append_hydration_dev(div3, t12);
+    			if_block5.m(div3, null);
     			append_hydration_dev(main, t13);
     			append_hydration_dev(main, button);
     			append_hydration_dev(button, t14);
     			append_hydration_dev(main, t15);
     			append_hydration_dev(main, footer);
-    			append_hydration_dev(footer, div1);
-    			append_hydration_dev(div1, t16);
-    			append_hydration_dev(div1, a);
+    			append_hydration_dev(footer, div4);
+    			append_hydration_dev(div4, t16);
+    			append_hydration_dev(div4, a);
     			append_hydration_dev(a, t17);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[5], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler_6*/ ctx[18], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*style*/ 1) set_data_dev(t4, /*style*/ ctx[0]);
-    			if (dirty & /*theme*/ 2) set_data_dev(t8, /*theme*/ ctx[1]);
-    			if (dirty & /*genre*/ 4) set_data_dev(t12, /*genre*/ ctx[2]);
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block0) {
+    				if_block0.p(ctx, dirty);
+    			} else {
+    				if_block0.d(1);
+    				if_block0 = current_block_type(ctx);
+
+    				if (if_block0) {
+    					if_block0.c();
+    					if_block0.m(div0, null);
+    				}
+    			}
+
+    			if (current_block_type_1 === (current_block_type_1 = select_block_type_1(ctx)) && if_block1) {
+    				if_block1.p(ctx, dirty);
+    			} else {
+    				if_block1.d(1);
+    				if_block1 = current_block_type_1(ctx);
+
+    				if (if_block1) {
+    					if_block1.c();
+    					if_block1.m(div3, t5);
+    				}
+    			}
+
+    			if (current_block_type_2 === (current_block_type_2 = select_block_type_2(ctx)) && if_block2) {
+    				if_block2.p(ctx, dirty);
+    			} else {
+    				if_block2.d(1);
+    				if_block2 = current_block_type_2(ctx);
+
+    				if (if_block2) {
+    					if_block2.c();
+    					if_block2.m(div1, null);
+    				}
+    			}
+
+    			if (current_block_type_3 === (current_block_type_3 = select_block_type_3(ctx)) && if_block3) {
+    				if_block3.p(ctx, dirty);
+    			} else {
+    				if_block3.d(1);
+    				if_block3 = current_block_type_3(ctx);
+
+    				if (if_block3) {
+    					if_block3.c();
+    					if_block3.m(div3, t9);
+    				}
+    			}
+
+    			if (current_block_type_4 === (current_block_type_4 = select_block_type_4(ctx)) && if_block4) {
+    				if_block4.p(ctx, dirty);
+    			} else {
+    				if_block4.d(1);
+    				if_block4 = current_block_type_4(ctx);
+
+    				if (if_block4) {
+    					if_block4.c();
+    					if_block4.m(div2, null);
+    				}
+    			}
+
+    			if (current_block_type_5 === (current_block_type_5 = select_block_type_5(ctx)) && if_block5) {
+    				if_block5.p(ctx, dirty);
+    			} else {
+    				if_block5.d(1);
+    				if_block5 = current_block_type_5(ctx);
+
+    				if (if_block5) {
+    					if_block5.c();
+    					if_block5.m(div3, null);
+    				}
+    			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
+    			if_block0.d();
+    			if_block1.d();
+    			if_block2.d();
+    			if_block3.d();
+    			if_block4.d();
+    			if_block5.d();
     			mounted = false;
     			dispose();
     		}
@@ -791,7 +1621,14 @@ var Index = (function () {
     	let style = gameIdeaObj.style;
     	let theme = gameIdeaObj.theme;
     	let genre = gameIdeaObj.genre;
+    	let styleLock = false;
+    	let themeLock = false;
+    	let genreLock = false;
+    	let styleTempField;
+    	let themeTempField;
+    	let genreTempField;
 
+    	// Request idea object from backend
     	const FetchNewIdea = async () => {
     		let response = await fetch("/generate");
     		if (!response.ok) return console.error("Something went wrong with generate request!");
@@ -801,16 +1638,49 @@ var Index = (function () {
     		$$invalidate(2, genre = result.genre);
     	};
 
+    	// Change lock and update fields accordingly
+    	const ChangeLockStatus = fieldType => {
+    		if (fieldType === "style") {
+    			if (!styleLock) {
+    				$$invalidate(6, styleTempField = style);
+    			} else $$invalidate(0, style = styleTempField);
+
+    			$$invalidate(3, styleLock = !styleLock);
+    		}
+
+    		if (fieldType === "theme") {
+    			if (!themeLock) {
+    				$$invalidate(7, themeTempField = theme);
+    			} else $$invalidate(1, theme = themeTempField);
+
+    			$$invalidate(4, themeLock = !themeLock);
+    		}
+
+    		if (fieldType === "genre") {
+    			if (!genreLock) {
+    				$$invalidate(8, genreTempField = genre);
+    			} else $$invalidate(2, genre = genreTempField);
+
+    			$$invalidate(5, genreLock = !genreLock);
+    		}
+    	};
+
     	const writable_props = ['gameIdeaObj'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1.warn(`<Routes> was created with unknown prop '${key}'`);
     	});
 
-    	const click_handler = () => FetchNewIdea();
+    	const click_handler = () => ChangeLockStatus("style");
+    	const click_handler_1 = () => ChangeLockStatus("style");
+    	const click_handler_2 = () => ChangeLockStatus("theme");
+    	const click_handler_3 = () => ChangeLockStatus("theme");
+    	const click_handler_4 = () => ChangeLockStatus("genre");
+    	const click_handler_5 = () => ChangeLockStatus("genre");
+    	const click_handler_6 = () => FetchNewIdea();
 
     	$$self.$$set = $$props => {
-    		if ('gameIdeaObj' in $$props) $$invalidate(4, gameIdeaObj = $$props.gameIdeaObj);
+    		if ('gameIdeaObj' in $$props) $$invalidate(11, gameIdeaObj = $$props.gameIdeaObj);
     	};
 
     	$$self.$capture_state = () => ({
@@ -818,27 +1688,60 @@ var Index = (function () {
     		style,
     		theme,
     		genre,
-    		FetchNewIdea
+    		styleLock,
+    		themeLock,
+    		genreLock,
+    		styleTempField,
+    		themeTempField,
+    		genreTempField,
+    		FetchNewIdea,
+    		ChangeLockStatus
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('gameIdeaObj' in $$props) $$invalidate(4, gameIdeaObj = $$props.gameIdeaObj);
+    		if ('gameIdeaObj' in $$props) $$invalidate(11, gameIdeaObj = $$props.gameIdeaObj);
     		if ('style' in $$props) $$invalidate(0, style = $$props.style);
     		if ('theme' in $$props) $$invalidate(1, theme = $$props.theme);
     		if ('genre' in $$props) $$invalidate(2, genre = $$props.genre);
+    		if ('styleLock' in $$props) $$invalidate(3, styleLock = $$props.styleLock);
+    		if ('themeLock' in $$props) $$invalidate(4, themeLock = $$props.themeLock);
+    		if ('genreLock' in $$props) $$invalidate(5, genreLock = $$props.genreLock);
+    		if ('styleTempField' in $$props) $$invalidate(6, styleTempField = $$props.styleTempField);
+    		if ('themeTempField' in $$props) $$invalidate(7, themeTempField = $$props.themeTempField);
+    		if ('genreTempField' in $$props) $$invalidate(8, genreTempField = $$props.genreTempField);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [style, theme, genre, FetchNewIdea, gameIdeaObj, click_handler];
+    	return [
+    		style,
+    		theme,
+    		genre,
+    		styleLock,
+    		themeLock,
+    		genreLock,
+    		styleTempField,
+    		themeTempField,
+    		genreTempField,
+    		FetchNewIdea,
+    		ChangeLockStatus,
+    		gameIdeaObj,
+    		click_handler,
+    		click_handler_1,
+    		click_handler_2,
+    		click_handler_3,
+    		click_handler_4,
+    		click_handler_5,
+    		click_handler_6
+    	];
     }
 
     class Routes extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { gameIdeaObj: 4 });
+    		init(this, options, instance, create_fragment, safe_not_equal, { gameIdeaObj: 11 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -850,7 +1753,7 @@ var Index = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*gameIdeaObj*/ ctx[4] === undefined && !('gameIdeaObj' in props)) {
+    		if (/*gameIdeaObj*/ ctx[11] === undefined && !('gameIdeaObj' in props)) {
     			console_1.warn("<Routes> was created without expected prop 'gameIdeaObj'");
     		}
     	}
