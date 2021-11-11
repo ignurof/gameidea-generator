@@ -9,10 +9,6 @@
     let themeLock = false;
     let genreLock = false;
 
-    let styleTempField;
-    let themeTempField;
-    let genreTempField;
-
     // Request idea object from backend
     const FetchNewIdea = async() => {
         let response = await fetch("/generate");
@@ -21,31 +17,9 @@
 
         let result = await response.json();
 
-        style = result.style;
-        theme = result.theme;
-        genre = result.genre;
-    }
-
-    // Change lock and update fields accordingly
-    const ChangeLockStatus = (fieldType) => {
-        if(fieldType === "style"){
-            if(!styleLock){
-                styleTempField = style;
-            } else style = styleTempField;
-            styleLock = !styleLock;
-        }
-        if(fieldType === "theme"){
-            if(!themeLock){
-                themeTempField = theme;
-            } else theme = themeTempField;
-            themeLock = !themeLock;
-        }
-        if(fieldType === "genre"){
-            if(!genreLock){
-                genreTempField = genre;
-            } else genre = genreTempField;
-            genreLock = !genreLock;
-        }
+        if(!styleLock) style = result.style;
+        if(!themeLock) theme = result.theme;
+        if(!genreLock) genre = result.genre;
     }
 </script>
 
@@ -58,16 +32,18 @@
     }
 
     h1{
-        color: rgb(250, 203, 73);
-        text-shadow: 0px 4px 4px rgb(124, 35, 35);
-        margin-top: 3em;
+        color: rgb(240, 111, 111);
+        text-shadow: 0px 4px 4px rgb(88, 40, 40);
+        font-size: 4em;
+        font-family: Arial;
+        margin-top: 1em;
     }
 
     button{
-        margin: 4em;
+        margin: 3em;
         border: 0;
-        border-radius: .6em;
-        background: rgb(216, 92, 61);
+        border-radius: .3em;
+        background: #b82941;
         color: white;
         font-size: 1.6em;
         font-weight: bold;
@@ -90,7 +66,7 @@
         margin-right: auto;
         border: 0;
         border-radius: .6em;
-        background: rgb(240, 240, 240);
+        background: rgb(218, 233, 218);
         width: 18em;
         box-shadow: 2px 8px 4px rgba(0, 0, 0, 0.24),
         -2px 8px 4px rgba(0, 0, 0, 0.24);
@@ -102,7 +78,7 @@
         color: rgb(101, 95, 104);
         font-size: 1em;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        margin-left: auto;
+        margin-left: 7.5em;
     }
 
     .field{
@@ -133,7 +109,7 @@
     }
 
     footer{
-        background: rgb(56, 90, 90);
+        background: #1d4229;
         position:absolute;
         bottom: 0;
         width: 100%;
@@ -158,55 +134,47 @@
         <div class="field">
             <legend>STYLE</legend>
             {#if !styleLock}
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => ChangeLockStatus("style")}>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => {styleLock = !styleLock}}>
                     <path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z" />
                 </svg>
             {:else}
-                <svg id="closed-lock" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => ChangeLockStatus("style")}>
+                <svg id="closed-lock" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => {styleLock = !styleLock}}>
                     <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
                 </svg>
             {/if}
         </div>
-        {#if !styleLock}
-            <h4>{style}</h4>
-        {:else}
-            <h4>{styleTempField}</h4>
-        {/if}
+
+        <h4>{style}</h4>
 
         <div class="field">
             <legend>THEME</legend>
             {#if !themeLock}
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => ChangeLockStatus("theme")}>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => {themeLock = !themeLock}}>
                     <path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z" />
                 </svg>
             {:else}
-                <svg id="closed-lock" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => ChangeLockStatus("theme")}>
+                <svg id="closed-lock" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => {themeLock = !themeLock}}>
                     <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
                 </svg>
             {/if}
         </div>
-        {#if !themeLock}
-            <h4>{theme}</h4>
-        {:else}
-            <h4>{themeTempField}</h4>
-        {/if}
+
+        <h4>{theme}</h4>
+        
         <div class="field">
             <legend>GENRE</legend>
             {#if !genreLock}
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => ChangeLockStatus("genre")}>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => {genreLock = !genreLock}}>
                     <path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z" />
                 </svg>
             {:else}
-                <svg id="closed-lock" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => ChangeLockStatus("genre")}>
+                <svg id="closed-lock" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" on:click={() => {genreLock = !genreLock}}>
                     <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
                 </svg>
             {/if}
         </div>
-        {#if !genreLock}
-            <h4>{genre}</h4>
-        {:else}
-            <h4>{genreTempField}</h4>
-        {/if}
+
+        <h4>{genre}</h4>
             
     </div>
 
